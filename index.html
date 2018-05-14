@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Train Schedule</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Train Time Scheduler</h1>
+                <p class="lead">Add your train below!</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md">
+                <!-- TRAIN SCHEDULE -->
+                <div class="card card-primary">
+                    <div class="card-heading">
+                        <h2 class="card-title"><strong>ACTIVE TRAINS</strong></h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover" id="activeTrains">
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Destination</th>
+                                    <th>Frequency (min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- THIS IS WHERE THE TRAINS WILL APPEAR -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- THIS IS WHERE THE USER CAN ENTER NEW TRAINS TO SCHEDULE -->
+                <div class="card card-secondary">
+                    <div class="card-heading">
+                        <h2 class="card-title"><strong>ADD A TRAIN</strong></h2>
+                    </div>
+
+                    <div class="card-body" style="width: 26rem;">
+                        <form>
+                            <div class="form group row entry">
+                                <label for="nameInput">Train Name:</label>
+                                <input class="form-control" id="trainName" type="text">
+                            </div>
+                            <div class="form group row entry">
+                                <label for="destinationInput">Destination:</label>
+                                <input class="form-control" id="trainDestination" type="text">
+                            </div>
+                            <div class="form group row entry">
+                                <label for="timeInput">First Train Time (HH:mm - military time):</label>
+                                <input class="form-control" id="startTime" type="text">
+                            </div>
+                            <div class="form group row entry">
+                                <label for="frequencyInput">Frequency (mins):</label>
+                                <input class="form-control" id="trainFrequency" type="text">
+                            </div>
+
+                            <button class="btn btn-primary" id="addTrain" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <script src="assets/javascript/app.js"></script>
+    </body>
+</html>
